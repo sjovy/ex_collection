@@ -347,4 +347,87 @@ class HashSetExample {
         System.out.println(set5);
 
     }
+
+
+}
+
+//new class TreeSetExample, empty main method
+class TreeSetExample {
+    public static void main(String[] args) {
+
+        //Create an empty tree set
+        TreeSet<String> treeSet = new TreeSet<String>();
+        //put five colors in it
+        treeSet.add("Red");
+        treeSet.add("Blue");
+        treeSet.add("Green");
+        treeSet.add("Yellow");
+        treeSet.add("Black");
+        //print the tree set
+        System.out.println(treeSet);
+
+        //use iterotor to iterate through the tree set and print
+        Iterator<String> iterator = treeSet.iterator();
+        while (iterator.hasNext()) {
+            System.out.println(iterator.next());
+        }
+
+        //use descending iterator to iterate through the tree set and print
+        Iterator<String> descendingIterator = treeSet.descendingIterator();
+        while (descendingIterator.hasNext()) {
+            System.out.println(descendingIterator.next());
+        }
+
+        //add all elements of the tree set to a new tree set
+        TreeSet<String> treeSet2 = new TreeSet<String>();
+        treeSet2.addAll(treeSet);
+        //print the new tree set
+        System.out.println(treeSet2);
+
+        //add all elements of the tree set to a new hash set
+        HashSet<String> hashSet = new HashSet<String>();
+        hashSet.addAll(treeSet);
+
+        //print the first and last element of the tree set
+        System.out.println(treeSet.first());
+        System.out.println(treeSet.last());
+
+        //print the element blue in the tree set
+        System.out.println(treeSet.ceiling("Blue"));
+
+        //print out the number of elements in the tree set
+        System.out.println(treeSet.size());
+
+        //create and fill a new tree set with integers 1-10, from an array
+        Integer[] array = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
+        TreeSet<Integer> treeSet3 = new TreeSet<Integer>(Arrays.asList(array));
+
+        //Write a Java program to find numbers less than 7 in the tree set.
+        System.out.println(treeSet3.headSet(7));
+        //get all elemnts less than 7 and GREATER than but not equal to 2 from treeSet3
+        System.out.println(treeSet3.subSet(3, 7));
+
+    }
+
+}
+
+//new class HashMapExample
+class HashMapExample {
+    public static void main(String[] args) {
+        //create a new hash map
+        HashMap<Integer, String> map = new HashMap<Integer, String>();
+        //put some key value pairs in it
+        map.put(1, "Red");
+        map.put(2, "Blue");
+        map.put(3, "Green");
+        map.put(4, "Yellow");
+        //print the map
+        System.out.println(map);
+
+        //get and print the value of key 3
+        System.out.println(map.get(3));
+
+
+
+    }
 }
